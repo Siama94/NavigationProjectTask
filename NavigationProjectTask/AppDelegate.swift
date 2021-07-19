@@ -9,28 +9,54 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+      
+        print(#function)
+        
+        let tabBarController = UITabBarController()
+        
+        let firstViewController = UIViewController()
+        firstViewController.view.backgroundColor = .systemPurple
+        firstViewController.tabBarItem = UITabBarItem(title: "First", image: .checkmark, tag: 0)
+        
+        let secondViewController = UIViewController()
+        let secondNavigationController = UINavigationController(rootViewController: secondViewController)
+        
+        secondViewController.view.backgroundColor = .systemYellow
+        secondViewController.tabBarItem = UITabBarItem(title: "Second", image: .remove, tag: 1)
+        
+        let thirdViewController = UIViewController()
+        thirdViewController.view.backgroundColor = .systemIndigo
+        thirdViewController.tabBarItem = UITabBarItem(title: "Third", image: .add, tag: 2)
+        
+        let fourViewController = UIViewController()
+        fourViewController.view.backgroundColor = .systemOrange
+        fourViewController.tabBarItem = UITabBarItem(title: "Four", image: .add, tag: 3)
+        
+        let fiveViewController = UIViewController()
+        fiveViewController.view.backgroundColor = .systemTeal
+        fiveViewController.tabBarItem = UITabBarItem(title: "Five", image: .add, tag: 4)
+        
+        let sixViewController = UIViewController()
+        sixViewController.view.backgroundColor = .systemFill
+        sixViewController.tabBarItem = UITabBarItem(title: "Six", image: .add, tag: 5)
+        
+        tabBarController.setViewControllers([firstViewController,
+                                             secondNavigationController,
+                                             thirdViewController,
+                                             fourViewController,
+                                             fiveViewController,
+                                             sixViewController],
+                                            animated: true)
+        
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible() // отображает окно и делает его ключевым
+        
+        
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-
 }
 
