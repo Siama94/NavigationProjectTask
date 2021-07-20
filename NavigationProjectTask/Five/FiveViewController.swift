@@ -1,5 +1,5 @@
 //
-//  FourChildViewController2..swift
+//  FiveViewController.swift
 //  NavigationProjectTask
 //
 //  Created by Анастасия on 20.07.2021.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-class FourChildViewController2: UIViewController {
+class FiveViewController: UIViewController {
     
     
     // MARK: - Views
     
     private lazy var button: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Dismiss", for: .normal)
+        button.setTitle("Press me", for: .normal)
         button.addTarget(self, action: #selector(tapButtonAction), for: .touchUpInside)
         return button
     }()
@@ -23,12 +23,7 @@ class FourChildViewController2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
-    }
-    
-    override func viewWillAppear(_ animated: Bool) { // контроллер проинициализирован
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
+        view.backgroundColor = .systemGray2
     }
     
     // MARK: - Initial
@@ -60,9 +55,7 @@ class FourChildViewController2: UIViewController {
     // MARK: - Action
     
     @objc private func tapButtonAction() {
-        
-        dismiss(animated: true, completion: nil)
-        
+        let navigationController = UINavigationController(rootViewController: FiveChildViewController())
+        present(navigationController, animated: true, completion: nil)
     }
-
 }

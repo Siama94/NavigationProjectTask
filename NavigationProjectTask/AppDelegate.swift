@@ -32,8 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let fourNavigationController = UINavigationController(rootViewController: fourViewController)
         fourViewController.tabBarItem = UITabBarItem(title: "Four", image: .add, tag: 3)
         
-        let fiveViewController = UIViewController()
-        fiveViewController.view.backgroundColor = .systemTeal
+        let fiveViewController = FiveViewController()
         fiveViewController.tabBarItem = UITabBarItem(title: "Five", image: .add, tag: 4)
         
         let sixViewController = UIViewController()
@@ -47,6 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                              fiveViewController,
                                              sixViewController],
                                             animated: true)
+        
+        //let navigationController = UINavigationController()
+       // navigationController.setViewControllers(fiveNavigationController, animated: true)
+        
         
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible() // отображает окно и делает его ключевым
