@@ -28,8 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let thirdViewController = ThirdViewController()
         thirdViewController.tabBarItem = UITabBarItem(title: "Third", image: .add, tag: 2)
         
-        let fourViewController = UIViewController()
-        fourViewController.view.backgroundColor = .systemOrange
+        let fourViewController = FourViewController()
+        let fourNavigationController = UINavigationController(rootViewController: fourViewController)
         fourViewController.tabBarItem = UITabBarItem(title: "Four", image: .add, tag: 3)
         
         let fiveViewController = UIViewController()
@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.setViewControllers([firstNavigationController,
                                              secondViewController,
                                              thirdViewController,
-                                             fourViewController,
+                                             fourNavigationController,
                                              fiveViewController,
                                              sixViewController],
                                             animated: true)
