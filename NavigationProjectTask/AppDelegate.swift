@@ -18,18 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tabBarController = UITabBarController()
         
-        let firstViewController = UIViewController()
-        firstViewController.view.backgroundColor = .systemPurple
+        let firstViewController = FirstViewController()
+        let firstNavigationController = UINavigationController(rootViewController: firstViewController)
         firstViewController.tabBarItem = UITabBarItem(title: "First", image: .checkmark, tag: 0)
         
-        let secondViewController = UIViewController()
-        let secondNavigationController = UINavigationController(rootViewController: secondViewController)
-        
-        secondViewController.view.backgroundColor = .systemYellow
+        let secondViewController = SecondViewController()
         secondViewController.tabBarItem = UITabBarItem(title: "Second", image: .remove, tag: 1)
         
-        let thirdViewController = UIViewController()
-        thirdViewController.view.backgroundColor = .systemIndigo
+        let thirdViewController = ThirdViewController()
         thirdViewController.tabBarItem = UITabBarItem(title: "Third", image: .add, tag: 2)
         
         let fourViewController = UIViewController()
@@ -44,8 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sixViewController.view.backgroundColor = .systemFill
         sixViewController.tabBarItem = UITabBarItem(title: "Six", image: .add, tag: 5)
         
-        tabBarController.setViewControllers([firstViewController,
-                                             secondNavigationController,
+        tabBarController.setViewControllers([firstNavigationController,
+                                             secondViewController,
                                              thirdViewController,
                                              fourViewController,
                                              fiveViewController,
